@@ -93,7 +93,7 @@ await Parallel.ForEachAsync(sitesTags, new ParallelOptions{MaxDegreeOfParallelis
     var (site, tag) = st;
     Console.WriteLine($"Fetching tag #{tag} from {site}");
 
-    var url = $"https://{site}/api/v1/timelines/tag/{tag}?limit=40";
+    var url = $"https://{site}/api/v1/timelines/tag/{tag}?limit=80";
     if (sitesRobotFile.TryGetValue(site, out var robotsFile))
     {
         var allowed = robotsFile.IsAllowedAccess(new Uri(url), "GetMoarFediverse");
